@@ -57,16 +57,3 @@ https://pizza-client-6jhw.onrender.com
 
   <img src="https://static-00.iconduck.com/assets.00/yarn-original-icon-256x256-gh6uo2q2.png" width="40" height="40" alt="Yarn" />
 </p>
-
-# How to copy
-
-<p align="left">git clone https://github.com/serlisovyk/Pizza.git</p>
-<p align="left">cd server</p>
-<p align="left">npm i</p>
-<p align="left">npm run dev</p>
-
-<br>
-
-<p align="left">cd client</p>
-<p align="left">npm i</p>
-<p align="left">npm start</p>

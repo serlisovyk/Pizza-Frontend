@@ -3,18 +3,21 @@ import Skeleton from '../PizzaBlock/Skeleton'
 import PizzaBlock from '../PizzaBlock/PizzaBlock'
 import Pagination from '../Pagination/Pagination'
 import Error from '../Error/Error'
-import { selectFilter } from '../../redux/slices/filter/filterSlice'
+import {
+  selectFilterCurrentCategory,
+  selectFilterCurrentPage,
+  selectFilterSearchValue,
+  selectFilterSortProperty,
+} from '../../redux/slices/filter/filterSlice'
 import { useGetPizzasQuery } from '../../redux/api/apiSlice'
 import { IProduct } from '../../types/types'
-import { useAppSelector } from '../../hooks/useAppSelector'
+import { useAppSelector } from '../../redux/store.hooks'
 
 export default function Content() {
-  const {
-    searchValue,
-    sort: { sortProperty },
-    currentPage,
-    currentCategory,
-  } = useAppSelector(selectFilter)
+  const searchValue = useAppSelector(selectFilterSearchValue)
+  const sortProperty = useAppSelector(selectFilterSortProperty)
+  const currentPage = useAppSelector(selectFilterCurrentPage)
+  const currentCategory = useAppSelector(selectFilterCurrentCategory)
 
   const {
     data: products,

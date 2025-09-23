@@ -1,17 +1,19 @@
 import { useParams } from 'react-router-dom'
-import styles from './SingleProduct.module.scss'
-import { typesNames } from '../../utils/constants'
-import { useGetOnePizzaQuery } from '../../redux/api/apiSlice'
-import { Loader } from '../../components/Loader/Loader'
+import { skipToken } from '@reduxjs/toolkit/query'
+import Loader from '../../components/Loader/Loader'
 import Error from '../../components/Error/Error'
+import { useGetOnePizzaQuery } from '../../redux/api/apiSlice'
+import { typesNames } from '../../utils/constants'
+import styles from './SingleProduct.module.scss'
 
 export default function SingleProduct() {
   const { id } = useParams()
-  const { data: OnePizzaData, isLoading } = useGetOnePizzaQuery(id as string)
 
-  if (isLoading) return <Loader />
+  const { data: OnePizzaData, isLoading } = useGetOnePizzaQuery(id ?? skipToken)
 
   if (!OnePizzaData) return <Error />
+
+  if (isLoading) return <Loader />
 
   const { title, description, price, imageUrl, sizes, types } = OnePizzaData
 
@@ -30,7 +32,7 @@ export default function SingleProduct() {
           <div>
             <h3 className={styles.subtitle}>Типы пиццы:</h3>
             <ul>
-              {sizes.map(size => (
+              {sizes.map((size) => (
                 <li key={size} className={styles.size}>
                   {size} см.
                 </li>
@@ -40,7 +42,7 @@ export default function SingleProduct() {
           <div>
             <h3 className={styles.subtitle}>Типы теста:</h3>
             <ul>
-              {types.map(type => (
+              {types.map((type) => (
                 <li key={type} className={styles.type}>
                   {typesNames[type]}
                 </li>

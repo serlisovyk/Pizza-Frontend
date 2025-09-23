@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import styles from './Search.module.scss'
 import debounce from 'lodash.debounce'
-import useActions from '../../hooks/useActions'
+import { useFilterActions } from '../../redux/store.hooks'
+import styles from './Search.module.scss'
 
 export default function Search() {
-  const { setSearchValue } = useActions()
+  const { setSearchValue } = useFilterActions()
 
   const [value, setValue] = useState('')
 
@@ -36,7 +36,7 @@ export default function Search() {
 
   return (
     <div className={styles.root}>
-      <label htmlFor="search"></label>
+      <label htmlFor="search" />
       <input
         ref={inputRef}
         className={styles.input}

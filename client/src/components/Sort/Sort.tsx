@@ -1,18 +1,17 @@
 import { memo, useEffect, useRef, useState } from 'react'
-import styles from './Sort.module.scss'
-import { selectFilter } from '../../redux/slices/filter/filterSlice'
+import Loader from '../Loader/Loader'
 import { useGetSortListQuery } from '../../redux/api/apiSlice'
+import { selectFilterSort } from '../../redux/slices/filter/filterSlice'
+import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
 import { ISortListItem } from '../../types/types'
-import { useAppSelector } from '../../hooks/useAppSelector'
-import useActions from '../../hooks/useActions'
-import { Loader } from '../Loader/Loader'
+import styles from './Sort.module.scss'
 
 export default memo(function Sort() {
-  const { setSort } = useActions()
-
-  const { sort } = useAppSelector(selectFilter)
+  const { setSort } = useFilterActions()
 
   const { data: sortList, isLoading } = useGetSortListQuery()
+
+  const sort = useAppSelector(selectFilterSort)
 
   const sortRef = useRef<HTMLDivElement>(null)
 
@@ -51,7 +50,7 @@ export default memo(function Sort() {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setIsOpen(prev => !prev)}>{sort.name}</span>
+        <span onClick={() => setIsOpen((prev) => !prev)}>{sort.name}</span>
       </div>
       {isOpen && (
         <div className={styles.popup}>

@@ -1,14 +1,13 @@
 import ReactPaginate from 'react-paginate'
-import styles from './Pagination.module.scss'
-import { selectFilter } from '../../redux/slices/filter/filterSlice'
-import { useAppSelector } from '../../hooks/useAppSelector'
-import useActions from '../../hooks/useActions'
+import { selectFilterCurrentPage } from '../../redux/slices/filter/filterSlice'
+import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
 import { IHandleUpdatePageProps } from '../../types/types'
+import styles from './Pagination.module.scss'
 
 export default function Pagination() {
-  const { setCurrentPage } = useActions()
+  const { setCurrentPage } = useFilterActions()
 
-  const { currentPage } = useAppSelector(selectFilter)
+  const currentPage = useAppSelector(selectFilterCurrentPage)
 
   const handleUpdatePage = ({ selected }: IHandleUpdatePageProps) =>
     handleChangePage(selected + 1)

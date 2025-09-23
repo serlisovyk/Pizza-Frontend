@@ -44,6 +44,13 @@ export interface ICartState {
   totalPrice: number
 }
 
+export interface IFilterState {
+  searchValue: string
+  currentPage: number
+  currentCategory: string
+  sort: ISortListItem
+}
+
 export interface IHandleUpdatePageProps {
   selected: number
 }

@@ -1,17 +1,18 @@
 import { Link, useLocation } from 'react-router-dom'
 import styles from './Header.module.scss'
-import { selectCart } from '../../redux/slices/cart/cartSlice'
+import {
+  selectCartTotalCount,
+  selectCartTotalPrice,
+} from '../../redux/slices/cart/cartSlice'
 import Search from '../Search/Search'
-import { useAppSelector } from '../../hooks/useAppSelector'
-import useCartTotalCount from '../../hooks/useCartTotalCount'
 import { ROUTES } from '../../utils/routes'
+import { useAppSelector } from '../../redux/store.hooks'
 
 export default function Header() {
   const { pathname } = useLocation()
 
-  const { totalPrice } = useAppSelector(selectCart)
-
-  const totalCount = useCartTotalCount()
+  const totalPrice = useAppSelector(selectCartTotalPrice)
+  const totalCount = useAppSelector(selectCartTotalCount)
 
   return (
     <header className={styles.header}>

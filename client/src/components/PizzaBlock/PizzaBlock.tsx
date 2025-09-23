@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import styles from './PizzaBlock.module.scss'
 import { Link } from 'react-router-dom'
+import { useCartActions } from '../../redux/store.hooks'
 import { typesNames } from '../../utils/constants'
 import { ICartProduct, IProduct } from '../../types/types'
-import useActions from '../../hooks/useActions'
+import styles from './PizzaBlock.module.scss'
 
 export default function PizzaBlock({
   _id,
@@ -13,7 +13,7 @@ export default function PizzaBlock({
   sizes,
   types,
 }: IProduct) {
-  const { addItemToCart } = useActions()
+  const { addItemToCart } = useCartActions()
 
   const [activeType, setActiveType] = useState(0)
   const [activeSize, setActiveSize] = useState(0)
@@ -39,7 +39,7 @@ export default function PizzaBlock({
       <h4 className={styles.title}>{title}</h4>
       <div className={styles.selector}>
         <ul>
-          {types.map(type => (
+          {types.map((type) => (
             <li
               key={type}
               onClick={() => setActiveType(type)}

@@ -1,21 +1,21 @@
 import { Link } from 'react-router-dom'
-import styles from './Cart.module.scss'
-import { selectCart } from '../../redux/slices/cart/cartSlice'
+import {
+  selectCartItems,
+  selectCartTotalCount,
+  selectCartTotalPrice,
+} from '../../redux/slices/cart/cartSlice'
+import { useAppSelector, useCartActions } from '../../redux/store.hooks'
 import CartItem from '../../components/CartItem/CartItem'
 import CartEmpty from '../../components/CartEmpty/CartEmpty'
-import { useAppSelector } from '../../hooks/useAppSelector'
-import useCartTotalCount from '../../hooks/useCartTotalCount'
-import useActions from '../../hooks/useActions'
 import { ROUTES } from '../../utils/routes'
+import styles from './Cart.module.scss'
 
 export default function Cart() {
-  const { clearCart } = useActions()
+  const { clearCart } = useCartActions()
 
-  const { totalPrice, items } = useAppSelector(selectCart)
-
-  const totalCount = useCartTotalCount()
-
-  const handleClickClear = () => clearCart()
+  const totalPrice = useAppSelector(selectCartTotalPrice)
+  const items = useAppSelector(selectCartItems)
+  const totalCount = useAppSelector(selectCartTotalCount)
 
   if (!totalPrice) return <CartEmpty />
 
@@ -92,11 +92,11 @@ export default function Cart() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span onClick={handleClickClear}>Очистить корзину</span>
+            <span onClick={() => clearCart()}>Очистить корзину</span>
           </div>
         </div>
         <div className={styles.items}>
-          {items.map(item => (
+          {items.map((item) => (
             <CartItem key={item._id} {...item} />
           ))}
         </div>

@@ -1,6 +1,6 @@
-import styles from './App.module.scss'
 import Header from '../Header/Header'
 import AppRoutes from '../AppRoutes/AppRoutes'
+import styles from './App.module.scss'
 
 export default function App() {
   return (

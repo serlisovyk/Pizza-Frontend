@@ -1,22 +1,16 @@
-import { memo, useCallback } from 'react'
+import { memo } from 'react'
 import styles from './Categories.module.scss'
 import { useGetCategoriesQuery } from '../../redux/api/apiSlice'
-import { selectFilter } from '../../redux/slices/filter/filterSlice'
-import { useAppSelector } from '../../hooks/useAppSelector'
-import useActions from '../../hooks/useActions'
-import { Loader } from '../Loader/Loader'
+import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
+import { selectFilterCurrentCategory } from '../../redux/slices/filter/filterSlice'
+import Loader from '../Loader/Loader'
 
 export default memo(function Categories() {
-  const { setActiveCategory } = useActions()
+  const { setActiveCategory } = useFilterActions()
 
   const { data: categories, isLoading } = useGetCategoriesQuery()
 
-  const { currentCategory } = useAppSelector(selectFilter)
-
-  const handleChangeCategory = useCallback(
-    (currentCategory: string) => setActiveCategory(currentCategory),
-    [setActiveCategory]
-  )
+  const currentCategory = useAppSelector(selectFilterCurrentCategory)
 
   return (
     <div className={styles.categories}>
@@ -24,10 +18,10 @@ export default memo(function Categories() {
         <Loader />
       ) : (
         <ul>
-          {categories?.map(category => (
+          {categories?.map((category) => (
             <li
               key={category._id}
-              onClick={() => handleChangeCategory(category.name)}
+              onClick={() => setActiveCategory(category.name)}
               className={currentCategory === category.name ? 'categoriesActive' : ''}
             >
               {category.name}

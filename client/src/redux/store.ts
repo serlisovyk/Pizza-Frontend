@@ -5,13 +5,13 @@ import { apiSlice } from './api/apiSlice'
 
 export const store = configureStore({
   reducer: {
-    cart: cartSlice,
-    filter: filterSlice,
+    [cartSlice.name]: cartSlice.reducer,
+    [filterSlice.name]: filterSlice.reducer,
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
 
-  middleware: getMiddleware => getMiddleware().concat(apiSlice.middleware),
+  middleware: (getMiddleware) => getMiddleware().concat(apiSlice.middleware),
 })
 
-export type RootState = ReturnType<typeof store.getState>
+export type AppState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch

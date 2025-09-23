@@ -1,15 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { RootState } from '../../store'
-import { ISortListItem } from '../../../types/types'
+import { IFilterState, ISortListItem } from '../../../types/types'
+
+const initialState: IFilterState = {
+  searchValue: '',
+  currentPage: 1,
+  currentCategory: 'Все',
+  sort: { name: 'популярности', sortProperty: 'rating' },
+}
 
 const filterSlice = createSlice({
   name: 'filter',
-  initialState: {
-    searchValue: '',
-    currentPage: 1,
-    currentCategory: 'Все',
-    sort: { name: 'популярности', sortProperty: 'rating' } as ISortListItem,
-  },
+  initialState,
   reducers: {
     setActiveCategory(state, { payload }: PayloadAction<string>) {
       state.currentCategory = payload
@@ -27,10 +28,23 @@ const filterSlice = createSlice({
       state.currentPage = payload
     },
   },
+  selectors: {
+    selectFilterCurrentCategory: (state) => state.currentCategory,
+    selectFilterSearchValue: (state) => state.searchValue,
+    selectFilterSort: (state) => state.sort,
+    selectFilterCurrentPage: (state) => state.currentPage,
+    selectFilterSortProperty: (state) => state.sort.sortProperty,
+  },
 })
 
-export const selectFilter = (state: RootState) => state.filter
+export const {
+  selectFilterCurrentCategory,
+  selectFilterSearchValue,
+  selectFilterSort,
+  selectFilterCurrentPage,
+  selectFilterSortProperty,
+} = filterSlice.selectors
 
 export const { actions: filterActions } = filterSlice
 
-export default filterSlice.reducer
+export default filterSlice

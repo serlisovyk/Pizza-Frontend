@@ -1,6 +1,6 @@
 import styles from './CartItem.module.scss'
 import { ICartProduct } from '../../types/types'
-import useActions from '../../hooks/useActions'
+import { useCartActions } from '../../redux/store.hooks'
 
 export default function CartItem({
   _id,
@@ -11,7 +11,7 @@ export default function CartItem({
   size,
   count,
 }: ICartProduct) {
-  const { addItemToCart, minusItemInCart, removeItemFromCart } = useActions()
+  const { addItemToCart, minusItemInCart, removeItemFromCart } = useCartActions()
 
   const cartItemInfo: ICartProduct = {
     _id,

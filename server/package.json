@@ -7,10 +7,8 @@
     "start": "tsc && node dist/server.js",
     "dev": "tsc && nodemon dist/server.js"
   },
-  "keywords": [],
   "author": "Serhii Lisovyk",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

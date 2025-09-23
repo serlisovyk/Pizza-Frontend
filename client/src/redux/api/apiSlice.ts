@@ -15,27 +15,27 @@ export const apiSlice = createApi({
 
   tagTypes: ['Categories', 'Sort', 'Pizzas', 'OnePizza'],
 
-  endpoints: builder => ({
-    getCategories: builder.query<ICategory[], void>({
+  endpoints: ({ query }) => ({
+    getCategories: query<ICategory[], void>({
       query: () => '/categories',
       providesTags: ['Categories'],
     }),
 
-    getSortList: builder.query<ISortListItem[], void>({
+    getSortList: query<ISortListItem[], void>({
       query: () => '/sort',
       providesTags: ['Sort'],
     }),
 
-    getPizzas: builder.query<IProduct[], IProductSearchParams>({
-      query: params => ({
+    getPizzas: query<IProduct[], IProductSearchParams>({
+      query: (params) => ({
         url: '/products',
         params: buildProductQueryParams(params),
       }),
       providesTags: ['Pizzas'],
     }),
 
-    getOnePizza: builder.query<IProduct, string>({
-      query: id => `/products/${id}`,
+    getOnePizza: query<IProduct, string>({
+      query: (id) => `/products/${id}`,
       providesTags: ['OnePizza'],
     }),
   }),

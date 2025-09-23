@@ -1,9 +1,9 @@
 import { memo } from 'react'
-import styles from './Categories.module.scss'
-import { useGetCategoriesQuery } from '../../redux/api/apiSlice'
-import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
-import { selectFilterCurrentCategory } from '../../redux/slices/filter/filterSlice'
 import Loader from '../Loader/Loader'
+import { useGetCategoriesQuery } from '../../redux/api/apiSlice'
+import { selectFilterCurrentCategory } from '../../redux/slices/filter/filterSlice'
+import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
+import styles from './Categories.module.scss'
 
 export default memo(function Categories() {
   const { setActiveCategory } = useFilterActions()

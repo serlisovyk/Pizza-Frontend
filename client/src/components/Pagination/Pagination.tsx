@@ -10,9 +10,7 @@ export default function Pagination() {
   const currentPage = useAppSelector(selectFilterCurrentPage)
 
   const handleUpdatePage = ({ selected }: IHandleUpdatePageProps) =>
-    handleChangePage(selected + 1)
-
-  const handleChangePage = (num: number) => setCurrentPage(num)
+    setCurrentPage(selected + 1)
 
   return (
     <ReactPaginate

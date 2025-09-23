@@ -9,7 +9,7 @@ export const changeTotalPrice = (state: ICartState) => {
 
 export const deleteItemFromCart = (state: ICartState, payload: ICartProduct) => {
   state.items = state.items.filter(
-    item =>
+    (item) =>
       item._id !== payload._id ||
       item.size !== payload.size ||
       item.type !== payload.type
@@ -18,7 +18,7 @@ export const deleteItemFromCart = (state: ICartState, payload: ICartProduct) => 
 
 export const searchItemInCart = (state: ICartState, payload: ICartProduct) => {
   const findItem = state.items.find(
-    item =>
+    (item) =>
       item._id === payload._id &&
       item.size === payload.size &&
       item.type === payload.type

@@ -18,6 +18,9 @@ export default function PizzaBlock({
   const [activeType, setActiveType] = useState(0)
   const [activeSize, setActiveSize] = useState(0)
 
+  const handleChangeActiveType = (type: number) => setActiveType(type)
+  const handleChangeActiveSize = (index: number) => setActiveSize(index)
+
   function handleClickBtn() {
     const item: Omit<ICartProduct, 'count'> = {
       _id,
@@ -42,7 +45,7 @@ export default function PizzaBlock({
           {types.map((type) => (
             <li
               key={type}
-              onClick={() => setActiveType(type)}
+              onClick={() => handleChangeActiveType(type)}
               className={activeType === type ? 'pizzaBlockActive' : ''}
             >
               {typesNames[type]}
@@ -53,7 +56,7 @@ export default function PizzaBlock({
           {sizes.map((size, i) => (
             <li
               key={size}
-              onClick={() => setActiveSize(i)}
+              onClick={() => handleChangeActiveSize(i)}
               className={activeSize === i ? 'pizzaBlockActive' : ''}
             >
               {size} см.

@@ -1,4 +1,3 @@
-import styles from './Content.module.scss'
 import Skeleton from '../PizzaBlock/Skeleton'
 import PizzaBlock from '../PizzaBlock/PizzaBlock'
 import Pagination from '../Pagination/Pagination'
@@ -10,8 +9,9 @@ import {
   selectFilterSortProperty,
 } from '../../redux/slices/filter/filterSlice'
 import { useGetPizzasQuery } from '../../redux/api/apiSlice'
-import { IProduct } from '../../types/types'
 import { useAppSelector } from '../../redux/store.hooks'
+import { IProduct } from '../../types/types'
+import styles from './Content.module.scss'
 
 export default function Content() {
   const searchValue = useAppSelector(selectFilterSearchValue)

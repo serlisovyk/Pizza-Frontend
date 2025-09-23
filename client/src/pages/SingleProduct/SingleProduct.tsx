@@ -9,13 +9,13 @@ import styles from './SingleProduct.module.scss'
 export default function SingleProduct() {
   const { id } = useParams()
 
-  const { data: OnePizzaData, isLoading } = useGetOnePizzaQuery(id ?? skipToken)
+  const { data: onePizza, isLoading } = useGetOnePizzaQuery(id ?? skipToken)
 
-  if (!OnePizzaData) return <Error />
+  if (!onePizza) return <Error />
 
   if (isLoading) return <Loader />
 
-  const { title, description, price, imageUrl, sizes, types } = OnePizzaData
+  const { title, description, price, imageUrl, sizes, types } = onePizza
 
   return (
     <div className={styles.container}>

@@ -13,9 +13,9 @@ export default memo(function Sort() {
 
   const sort = useAppSelector(selectFilterSort)
 
-  const sortRef = useRef<HTMLDivElement>(null)
-
   const [isOpen, setIsOpen] = useState(false)
+
+  const sortRef = useRef<HTMLDivElement>(null)
 
   function handleClickListItem(item: ISortListItem) {
     setSort(item)

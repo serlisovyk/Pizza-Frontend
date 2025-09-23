@@ -17,6 +17,8 @@ export default function Cart() {
   const items = useAppSelector(selectCartItems)
   const totalCount = useAppSelector(selectCartTotalCount)
 
+  const handleClickClear = () => clearCart()
+
   if (!totalPrice) return <CartEmpty />
 
   return (
@@ -92,7 +94,7 @@ export default function Cart() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span onClick={() => clearCart()}>Очистить корзину</span>
+            <span onClick={handleClickClear}>Очистить корзину</span>
           </div>
         </div>
         <div className={styles.items}>

@@ -1,12 +1,12 @@
 import { Link, useLocation } from 'react-router-dom'
-import styles from './Header.module.scss'
+import Search from '../Search/Search'
 import {
   selectCartTotalCount,
   selectCartTotalPrice,
 } from '../../redux/slices/cart/cartSlice'
-import Search from '../Search/Search'
-import { ROUTES } from '../../utils/routes'
 import { useAppSelector } from '../../redux/store.hooks'
+import { ROUTES } from '../../utils/routes'
+import styles from './Header.module.scss'
 
 export default function Header() {
   const { pathname } = useLocation()

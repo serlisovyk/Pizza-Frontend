@@ -1,25 +1,105 @@
-.container {
-  display: flex;
-  justify-content: center;
-  gap: 5.208vw;
+.wrap {
   padding-bottom: 150px;
 }
 
+.card {
+  display: grid;
+  grid-template-columns: minmax(260px, 420px) 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  justify-self: center;
+  padding: clamp(16px, 3vw, 32px);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.06);
+}
+
+.media {
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: radial-gradient(120% 120% at 10% 10%, #fff 0%, #fff 60%, #fff6 100%),
+    #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
 .content {
-  max-width: 600px;
+  max-width: 720px;
 }
 
 .title {
-  font-size: 50px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  font-size: clamp(28px, 4.2vw, 56px);
+  line-height: 1.05;
+  margin: 0 0 12px;
 }
 
 .description {
-  font-size: 20px;
-  margin-block: 30px;
+  font-size: clamp(15px, 1.2vw, 18px);
+  color: #333;
+  margin: 8px 0 22px;
 }
 
-.selector {
+.subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.meta {
   display: flex;
-  gap: 50px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.priceValue {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 800;
+}
+
+.priceCurrency {
+  font-size: 14px;
+  color: #666;
+}
+
+@media (max-width: 940px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .media {
+    max-width: 480px;
+    margin: 0 auto;
+  }
 }

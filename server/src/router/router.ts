@@ -1,9 +1,9 @@
 import { Router } from 'express'
-const router = Router()
-
 import productsRouter from './productsRouter.js'
 import categoriesRouter from './categoriesRouter.js'
 import sortRouter from './sortRouter.js'
+
+const router = Router()
 
 router.use('/products', productsRouter)
 router.use('/categories', categoriesRouter)

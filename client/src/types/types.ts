@@ -54,3 +54,14 @@ export interface IFilterState {
 export interface IHandleUpdatePageProps {
   selected: number
 }
+
+export type Debounced<Function extends (...args: any[]) => void> = ((
+  ...args: Parameters<Function>
+) => void) &
+  DebouncedCancel
+
+type DebouncedCancel = {
+  cancel: () => void
+}
+
+export type DebounceTimer = ReturnType<typeof setTimeout> | null

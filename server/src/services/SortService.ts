@@ -1,6 +1,6 @@
+import ApiError from '../error/ApiError.js'
 import SortModel from '../models/SortModel.js'
 import { ISort } from '../types/types'
-import ApiError from '../error/ApiError.js'
 
 class SortService {
   async getAllSorts(): Promise<ISort[]> {

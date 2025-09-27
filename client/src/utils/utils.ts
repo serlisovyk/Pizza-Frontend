@@ -1,4 +1,5 @@
 import { ICartProduct, ICartState, IProductSearchParams } from '../types/types'
+import { Debounced, DebounceTimer } from '../types/types'
 
 export const changeTotalPrice = (state: ICartState) => {
   state.totalPrice = state.items.reduce(
@@ -52,4 +53,44 @@ export const buildProductQueryParams = ({
   if (searchValue) params.search = searchValue
 
   return params
+}
+
+export function generateTitle(searchValue: string, currentCategory: string) {
+  if (searchValue) {
+    return `Поиск по запросу: ${searchValue}`
+  }
+
+  if (currentCategory && currentCategory !== 'Все') {
+    return `Категория: ${currentCategory}`
+  }
+
+  return 'Все пиццы'
+}
+
+export function debounce<Function extends (...args: any[]) => void>(
+  fn: Function,
+  wait = 0
+): Debounced<Function> {
+  let timer: DebounceTimer = null
+  let lastArgs: Parameters<Function> | null = null
+
+  const debounced = ((...args: Parameters<Function>) => {
+    lastArgs = args
+    if (timer) clearTimeout(timer)
+
+    timer = setTimeout(() => {
+      timer = null
+
+      fn(...(lastArgs as Parameters<Function>))
+      lastArgs = null
+    }, wait)
+  }) as Debounced<Function>
+
+  debounced.cancel = () => {
+    if (timer) clearTimeout(timer)
+    timer = null
+    lastArgs = null
+  }
+
+  return debounced
 }

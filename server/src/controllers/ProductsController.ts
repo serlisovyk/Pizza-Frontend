@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
-import { QueryParams } from '../types/types'
 import ApiError from '../error/ApiError.js'
 import ProductsService from '../services/ProductsService.js'
+import { QueryParams } from '../types/types'
 
 class ProductsController {
   async getAll(

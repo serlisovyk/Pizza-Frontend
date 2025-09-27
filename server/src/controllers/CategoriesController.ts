@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
-import CategoryService from '../services/CategoriesService.js'
 import ApiError from '../error/ApiError.js'
+import CategoryService from '../services/CategoriesService.js'
 
 class CategoriesController {
   async getAll(req: Request, res: Response, next: NextFunction): Promise<void> {

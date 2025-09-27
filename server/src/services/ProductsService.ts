@@ -7,6 +7,7 @@ class ProductsService {
     const { category, search, sortBy } = query
 
     const filter: { [key: string]: any } = {}
+
     const options = {
       sort: {} as Record<SortOptions, number>,
       skip: (page - 1) * 4,

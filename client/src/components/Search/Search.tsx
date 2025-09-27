@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import debounce from 'lodash.debounce'
 import { useFilterActions } from '../../redux/store.hooks'
+import { debounce } from '../../utils/utils'
 import styles from './Search.module.scss'
 
 export default function Search() {

@@ -1,6 +1,6 @@
+import ApiError from '../error/ApiError.js'
 import CategoryModel from '../models/CategoriesModel.js'
 import { ICategory } from '../types/types'
-import ApiError from '../error/ApiError.js'
 
 class CategoryService {
   async getAllCategories(): Promise<ICategory[]> {

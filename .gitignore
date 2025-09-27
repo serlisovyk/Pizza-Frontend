@@ -1,11 +1,9 @@
-client/node_modules
+node_modules
 
-server/node_modules
+build
 
-server/.env
+dist
 
-client/build
-
-server/dist
+.env
 
 .DS_Store

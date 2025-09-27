@@ -1,7 +1,7 @@
 import { Router } from 'express'
-const router = Router()
-
 import CategoriesController from '../controllers/CategoriesController.js'
+
+const router = Router()
 
 router.get('/', CategoriesController.getAll)
 

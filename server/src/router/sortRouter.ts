@@ -1,7 +1,7 @@
 import { Router } from 'express'
-const router = Router()
-
 import SortController from '../controllers/SortController.js'
+
+const router = Router()
 
 router.get('/', SortController.getAll)
 

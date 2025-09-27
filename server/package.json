@@ -1,12 +1,12 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "src/app.js",
   "type": "module",
   "scripts": {
-    "dev": "tsc && nodemon dist/server.js",
+    "dev": "tsc && nodemon dist/app.js",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/app.js"
   },
   "author": "Serhii Lisovyk",
   "license": "ISC",

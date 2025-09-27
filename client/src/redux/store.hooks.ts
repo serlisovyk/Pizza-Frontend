@@ -1,6 +1,6 @@
 import { bindActionCreators } from '@reduxjs/toolkit'
-import { useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useMemo } from 'react'
 import { cartActions } from './slices/cart/cartSlice'
 import { filterActions } from './slices/filter/filterSlice'
 import { AppDispatch, AppState } from './store'

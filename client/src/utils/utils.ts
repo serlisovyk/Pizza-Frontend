@@ -1,5 +1,10 @@
-import { ICartProduct, ICartState, IProductSearchParams } from '../types/types'
-import { Debounced, DebounceTimer } from '../types/types'
+import {
+  ICartProduct,
+  ICartState,
+  IProductSearchParams,
+  Debounced,
+  DebounceTimer,
+} from '../types/types'
 
 export const changeTotalPrice = (state: ICartState) => {
   state.totalPrice = state.items.reduce(

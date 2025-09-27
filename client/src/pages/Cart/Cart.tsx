@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
+import CartItem from '../../components/CartItem/CartItem'
+import CartEmpty from '../../components/CartEmpty/CartEmpty'
 import {
   selectCartItems,
   selectCartTotalCount,
   selectCartTotalPrice,
 } from '../../redux/slices/cart/cartSlice'
 import { useAppSelector, useCartActions } from '../../redux/store.hooks'
-import CartItem from '../../components/CartItem/CartItem'
-import CartEmpty from '../../components/CartEmpty/CartEmpty'
 import { ROUTES } from '../../utils/routes'
 import styles from './Cart.module.scss'
 

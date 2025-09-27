@@ -11,6 +11,7 @@ export default function SingleProduct() {
   const { data: onePizza, isLoading, isError } = useGetOnePizzaQuery(id ?? skipToken)
 
   if (isLoading) return <Loader />
+
   if (isError || !onePizza) return <Error />
 
   const { title, description, price, imageUrl, sizes, types } = onePizza

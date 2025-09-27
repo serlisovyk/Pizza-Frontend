@@ -38,13 +38,14 @@ const filterSlice = createSlice({
 })
 
 export const {
-  selectFilterCurrentCategory,
-  selectFilterSearchValue,
-  selectFilterSort,
-  selectFilterCurrentPage,
-  selectFilterSortProperty,
-} = filterSlice.selectors
-
-export const { actions: filterActions } = filterSlice
+  actions: filterActions,
+  selectors: {
+    selectFilterCurrentCategory,
+    selectFilterSearchValue,
+    selectFilterSort,
+    selectFilterCurrentPage,
+    selectFilterSortProperty,
+  },
+} = filterSlice
 
 export default filterSlice

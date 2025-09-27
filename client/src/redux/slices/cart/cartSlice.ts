@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ICartProduct } from '../../../types/types'
 import {
   changeTotalPrice,
   deleteItemFromCart,
@@ -7,6 +6,7 @@ import {
   saveCartToLocalStorage,
   searchItemInCart,
 } from '../../../utils/utils'
+import { ICartProduct } from '../../../types/types'
 
 const initialState = loadCartFromLocalStorage()
 
@@ -54,9 +54,9 @@ const cartSlice = createSlice({
   },
 })
 
-export const { selectCartItems, selectCartTotalPrice, selectCartTotalCount } =
-  cartSlice.selectors
-
-export const { actions: cartActions } = cartSlice
+export const {
+  actions: cartActions,
+  selectors: { selectCartItems, selectCartTotalPrice, selectCartTotalCount },
+} = cartSlice
 
 export default cartSlice

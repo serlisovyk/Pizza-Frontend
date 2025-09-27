@@ -116,7 +116,7 @@ client/
 │   └── img/
 ├── src/
 │   ├── index.tsx                            # App bootstrap (React root, providers)
-│   ├── components/
+│   ├── components/                          # React components and routes
 │   │   ├── App
 │   │   ├── AppRoutes
 │   │   ├── CartEmpty

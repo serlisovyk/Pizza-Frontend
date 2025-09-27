@@ -25,6 +25,8 @@ Soon...
   
   <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="40" height="40" alt="React" title="React" />
 
+  <img width="12" />
+
   <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg" width="40" height="40" alt="Typescript" title="Typescript" />
 
    <img width="12" />

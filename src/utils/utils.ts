@@ -5,6 +5,7 @@ import type {
   Debounced,
   DebounceTimer,
 } from '../types/types'
+import { ALL_CATEGORY_NAME } from '../constants/constants'
 
 export const changeTotalPrice = (state: ICartState) => {
   state.totalPrice = state.items.reduce(
@@ -52,7 +53,7 @@ export const buildProductQueryParams = ({
     sortBy: sortProperty,
   }
 
-  if (currentCategory !== 'Все') params.category = currentCategory
+  if (currentCategory !== ALL_CATEGORY_NAME) params.category = currentCategory
   if (searchValue) params.search = searchValue
 
   return params
@@ -63,7 +64,7 @@ export function generateTitle(searchValue: string, currentCategory: string) {
     return `Поиск по запросу: ${searchValue}`
   }
 
-  if (currentCategory && currentCategory !== 'Все') {
+  if (currentCategory && currentCategory !== ALL_CATEGORY_NAME) {
     return `Категория: ${currentCategory}`
   }
 

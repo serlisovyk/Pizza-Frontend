@@ -2,6 +2,7 @@ import Loader from '../Loader/Loader'
 import { useGetCategoriesQuery } from '../../redux/api/apiSlice'
 import { selectFilterCurrentCategory } from '../../redux/slices/filter/filterSlice'
 import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
+import { ALL_CATEGORY, ALL_CATEGORY_NAME } from '../../constants/constants'
 import styles from './Categories.module.scss'
 
 export default function Categories() {
@@ -17,7 +18,7 @@ export default function Categories() {
         <Loader />
       ) : (
         <ul>
-          {categories?.map((category) => (
+          {[ALL_CATEGORY, ...(categories ?? [])].map((category) => (
             <li
               key={category._id}
               onClick={() => setActiveCategory(category.name)}

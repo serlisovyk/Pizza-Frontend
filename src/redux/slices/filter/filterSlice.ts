@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { ALL_CATEGORY_NAME } from '../../../constants/constants'
 import type { IFilterState, ISortListItem } from '../../../types/types'
 
 const initialState: IFilterState = {
   searchValue: '',
   currentPage: 1,
-  currentCategory: 'Все',
+  currentCategory: ALL_CATEGORY_NAME,
   sort: { name: 'популярности', sortProperty: 'rating' },
 }
 

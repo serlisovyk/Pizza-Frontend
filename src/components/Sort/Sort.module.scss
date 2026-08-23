@@ -1,5 +1,6 @@
 .sort {
   position: relative;
+  min-height: 20px;
 
   .label {
     display: flex;
@@ -48,5 +49,50 @@
         }
       }
     }
+  }
+}
+
+.skeleton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 246px;
+  min-height: 20px;
+}
+
+.skeletonIcon,
+.skeletonLabel,
+.skeletonValue {
+  display: inline-block;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f5f5f5 25%, #ececec 37%, #f5f5f5 63%);
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+}
+
+.skeletonIcon {
+  width: 10px;
+  height: 6px;
+  margin-right: 8px;
+}
+
+.skeletonLabel {
+  width: 124px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.skeletonValue {
+  width: 96px;
+  height: 18px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
   }
 }

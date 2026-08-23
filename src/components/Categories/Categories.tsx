@@ -1,8 +1,8 @@
-import Loader from '../Loader/Loader'
+import Skeleton from './Skeleton'
 import { useGetCategoriesQuery } from '../../redux/api/apiSlice'
 import { selectFilterCurrentCategory } from '../../redux/slices/filter/filterSlice'
 import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
-import { ALL_CATEGORY, ALL_CATEGORY_NAME } from '../../constants/constants'
+import { ALL_CATEGORY } from '../../constants/constants'
 import styles from './Categories.module.scss'
 
 export default function Categories() {
@@ -12,13 +12,15 @@ export default function Categories() {
 
   const currentCategory = useAppSelector(selectFilterCurrentCategory)
 
+  const categoriesList = [ALL_CATEGORY, ...(categories ?? [])]
+
   return (
     <div className={styles.categories}>
       {isLoading ? (
-        <Loader />
+        <Skeleton />
       ) : (
         <ul>
-          {[ALL_CATEGORY, ...(categories ?? [])].map((category) => (
+          {categoriesList.map((category) => (
             <li
               key={category._id}
               onClick={() => setActiveCategory(category.name)}

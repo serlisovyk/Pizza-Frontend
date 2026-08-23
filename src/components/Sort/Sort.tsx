@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import Loader from '../Loader/Loader'
+import Skeleton from './Skeleton'
 import { useGetSortListQuery } from '../../redux/api/apiSlice'
 import { selectFilterSort } from '../../redux/slices/filter/filterSlice'
 import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
@@ -34,6 +34,8 @@ export default function Sort() {
     return () => document.body.removeEventListener('click', handleClickOutside)
   }, [])
 
+  if (isLoading) return <Skeleton />
+
   return (
     <div ref={sortRef} className={styles.sort}>
       <div className={styles.label}>
@@ -55,23 +57,17 @@ export default function Sort() {
       {isOpen && (
         <div className={styles.popup}>
           <ul>
-            {isLoading ? (
-              <Loader />
-            ) : (
-              sortList?.map((sortListItem, i) => (
-                <li
-                  key={i}
-                  onClick={() => handleClickListItem(sortListItem)}
-                  className={
-                    sort.sortProperty === sortListItem.sortProperty
-                      ? 'sortActive'
-                      : ''
-                  }
-                >
-                  {sortListItem.name}
-                </li>
-              ))
-            )}
+            {sortList?.map((sortListItem, i) => (
+              <li
+                key={i}
+                onClick={() => handleClickListItem(sortListItem)}
+                className={
+                  sort.sortProperty === sortListItem.sortProperty ? 'sortActive' : ''
+                }
+              >
+                {sortListItem.name}
+              </li>
+            ))}
           </ul>
         </div>
       )}

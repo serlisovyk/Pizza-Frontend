@@ -30,7 +30,7 @@ export default function CartItem({
   return (
     <div className={styles.item}>
       <div className={styles.img}>
-        <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
+        <img src={imageUrl} alt="Pizza" />
       </div>
       <div className={styles.info}>
         <h3>{title}</h3>

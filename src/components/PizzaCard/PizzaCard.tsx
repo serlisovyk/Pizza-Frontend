@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import { useCartActions } from '../../redux/store.hooks'
 import { PIZZA_TYPE_NAMES } from '../../constants/constants'
 import type { ICartProduct, IProduct } from '../../types/types'
-import styles from './PizzaBlock.module.scss'
+import styles from './PizzaCard.module.scss'
 
-export default function PizzaBlock({
+export default function PizzaCard({
   _id,
   title,
   price,
@@ -35,7 +35,7 @@ export default function PizzaBlock({
   }
 
   return (
-    <div className={styles.PizzaBlock}>
+    <div className={styles.card}>
       <Link to={`/pizza/${_id}`}>
         <img className={styles.image} src={'/' + imageUrl} alt="Pizza" />
       </Link>
@@ -46,7 +46,7 @@ export default function PizzaBlock({
             <li
               key={type}
               onClick={() => handleChangeActiveType(type)}
-              className={activeType === type ? 'pizzaBlockActive' : ''}
+              className={activeType === type ? styles.active : ''}
             >
               {PIZZA_TYPE_NAMES[type]}
             </li>
@@ -57,7 +57,7 @@ export default function PizzaBlock({
             <li
               key={size}
               onClick={() => handleChangeActiveSize(i)}
-              className={activeSize === i ? 'pizzaBlockActive' : ''}
+              className={activeSize === i ? styles.active : ''}
             >
               {size} см.
             </li>

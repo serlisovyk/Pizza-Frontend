@@ -1,5 +1,5 @@
-import Skeleton from '../PizzaBlock/Skeleton'
-import PizzaBlock from '../PizzaBlock/PizzaBlock'
+import Skeleton from '../PizzaCard/Skeleton'
+import PizzaCard from '../PizzaCard/PizzaCard'
 import Pagination from '../Pagination/Pagination'
 import Error from '../Error/Error'
 import { usePizzasFromFilters } from '../../hooks/usePizzasFromFilters'
@@ -25,7 +25,7 @@ export default function Content() {
           <Error />
         ) : (
           products?.map((product: IProduct) => (
-            <PizzaBlock key={product._id} {...product} />
+            <PizzaCard key={product._id} {...product} />
           ))
         )}
       </div>

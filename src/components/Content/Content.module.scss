@@ -4,3 +4,10 @@
   gap: 20px;
   justify-items: center;
 }
+
+.state {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

@@ -1,34 +1,46 @@
 .root {
+  display: flex;
+  gap: 10px;
   margin-top: 40px;
-  li {
-    display: inline-block;
+}
+
+.page,
+.active,
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #fe5f1e;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #fe5f1e;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: #fe5f1e;
+    color: #fff;
   }
 
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 45px;
-    line-height: 42px;
-    padding: 10px;
-    border: 1px solid #fe5f1e;
-    border-radius: 30px;
-    margin-right: 10px;
-    cursor: pointer;
-    color: #fe5f1e;
+  &:focus-visible {
+    outline: 3px solid rgba(#fe5f1e, 0.3);
+    outline-offset: 3px;
+  }
 
-    &:hover {
-      background-color: #fe5f1e;
-      color: #fff;
-    }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
   }
-  :global {
-    .selected {
-      a {
-        background-color: #fe5f1e;
-        color: #fff;
-      }
-    }
-  }
+}
+
+.active {
+  background-color: #fe5f1e;
+  color: #fff;
 }

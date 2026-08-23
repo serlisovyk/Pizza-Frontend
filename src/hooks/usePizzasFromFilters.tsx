@@ -24,5 +24,5 @@ export function usePizzasFromFilters() {
     sortProperty,
   })
 
-  return { products, isLoading, isError }
+  return { products, currentPage, isLoading, isError }
 }

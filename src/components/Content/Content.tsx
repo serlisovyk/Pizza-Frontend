@@ -6,8 +6,13 @@ import { usePizzasFromFilters } from '../../hooks/usePizzasFromFilters'
 import type { IProduct } from '../../types/types'
 import styles from './Content.module.scss'
 
+const PRODUCT_PAGE_LIMIT = 4
+
 export default function Content() {
-  const { products, isLoading, isError } = usePizzasFromFilters()
+  const { products, currentPage, isLoading, isError } = usePizzasFromFilters()
+
+  const shouldShowPagination =
+    !!products?.length && (products.length === PRODUCT_PAGE_LIMIT || currentPage > 1)
 
   return (
     <>
@@ -15,7 +20,7 @@ export default function Content() {
         {isError ? (
           <Error />
         ) : isLoading ? (
-          [...new Array(4)].map((_, i) => <Skeleton key={i} />)
+          [...new Array(PRODUCT_PAGE_LIMIT)].map((_, i) => <Skeleton key={i} />)
         ) : !products?.length ? (
           <Error />
         ) : (
@@ -24,7 +29,7 @@ export default function Content() {
           ))
         )}
       </div>
-      <Pagination />
+      {shouldShowPagination && <Pagination />}
     </>
   )
 }

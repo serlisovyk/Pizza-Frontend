@@ -51,10 +51,6 @@ export interface IFilterState {
   sort: ISortListItem
 }
 
-export interface IHandleUpdatePageProps {
-  selected: number
-}
-
 export type Debounced<Function extends (...args: any[]) => void> = ((
   ...args: Parameters<Function>
 ) => void) &

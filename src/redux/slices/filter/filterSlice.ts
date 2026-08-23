@@ -15,14 +15,17 @@ const filterSlice = createSlice({
   reducers: {
     setActiveCategory(state, { payload }: PayloadAction<string>) {
       state.currentCategory = payload
+      state.currentPage = 1
     },
 
     setSearchValue(state, { payload }: PayloadAction<string>) {
       state.searchValue = payload
+      state.currentPage = 1
     },
 
     setSort(state, { payload }: PayloadAction<ISortListItem>) {
       state.sort = payload
+      state.currentPage = 1
     },
 
     setCurrentPage(state, { payload }: PayloadAction<number>) {

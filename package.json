@@ -1,16 +1,16 @@
 {
-  "name": "pizza",
-  "version": "0.1.0",
+  "name": "react-pizza",
+  "version": "1.0.0",
+  "description": "Pizza ordering app built with React, TypeScript, Redux Toolkit, and Vite.",
   "type": "module",
-  "private": true,
+  "author": "Serhii Lisovyk",
   "packageManager": "yarn@1.22.22",
   "scripts": {
     "dev": "vite",
-    "start": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "format": "corepack yarn prettier . --write",
-    "format:check": "corepack yarn prettier . --check"
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",

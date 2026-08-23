@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartActions } from '../../redux/store.hooks'
-import { typesNames } from '../../utils/constants'
+import { PIZZA_TYPE_NAMES } from '../../constants/constants'
 import type { ICartProduct, IProduct } from '../../types/types'
 import styles from './PizzaBlock.module.scss'
 
@@ -27,7 +27,7 @@ export default function PizzaBlock({
       title,
       price,
       imageUrl,
-      type: typesNames[activeType],
+      type: PIZZA_TYPE_NAMES[activeType],
       size: sizes[activeSize],
     }
 
@@ -48,7 +48,7 @@ export default function PizzaBlock({
               onClick={() => handleChangeActiveType(type)}
               className={activeType === type ? 'pizzaBlockActive' : ''}
             >
-              {typesNames[type]}
+              {PIZZA_TYPE_NAMES[type]}
             </li>
           ))}
         </ul>

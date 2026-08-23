@@ -3,7 +3,7 @@ import { skipToken } from '@reduxjs/toolkit/query'
 import Loader from '../../components/Loader/Loader'
 import Error from '../../components/Error/Error'
 import { useGetOnePizzaQuery } from '../../redux/api/apiSlice'
-import { typesNames } from '../../utils/constants'
+import { PIZZA_TYPE_NAMES } from '../../constants/constants'
 import styles from './SingleProduct.module.scss'
 
 export default function SingleProduct() {
@@ -51,7 +51,7 @@ export default function SingleProduct() {
               <ul className={styles.pills}>
                 {types.map((type) => (
                   <li key={type} className={styles.pill}>
-                    {typesNames[type]}
+                    {PIZZA_TYPE_NAMES[type]}
                   </li>
                 ))}
               </ul>

@@ -6,7 +6,7 @@ export interface IProduct {
   types: number[]
   sizes: number[]
   price: number
-  category: number
+  category: string
   rating: number
 }
 
@@ -28,7 +28,7 @@ export interface ISortListItem {
 type TSortProperty = 'rating' | 'title' | 'price'
 
 export interface ICategory {
-  _id: number
+  _id: string
   name: string
 }
 
@@ -36,7 +36,7 @@ export interface IProductSearchParams {
   currentCategory: string
   searchValue: string
   currentPage: number
-  sortProperty: string
+  sortProperty: TSortProperty
 }
 
 export interface ICartState {

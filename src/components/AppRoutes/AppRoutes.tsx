@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from '../../pages/Home/Home'
 import Loader from '../Loader/Loader'
-import { ROUTES } from '../../utils/routes'
+import { ROUTES } from '../../config/config'
 
 const Cart = lazy(
   () => import(/* webpackChunkName: "Cart" */ '../../pages/Cart/Cart')

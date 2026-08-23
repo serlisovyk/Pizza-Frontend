@@ -46,8 +46,8 @@ export const buildProductQueryParams = ({
   searchValue,
   currentPage,
   sortProperty,
-}: IProductSearchParams): Record<string, any> => {
-  const params: Record<string, any> = {
+}: IProductSearchParams): Record<string, string | number> => {
+  const params: Record<string, string | number> = {
     page: currentPage,
     sortBy: sortProperty,
   }

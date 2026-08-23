@@ -7,7 +7,7 @@ import {
   selectCartTotalPrice,
 } from '../../redux/slices/cart/cartSlice'
 import { useAppSelector, useCartActions } from '../../redux/store.hooks'
-import { ROUTES } from '../../utils/routes'
+import { ROUTES } from '../../config/config'
 import styles from './Cart.module.scss'
 
 export default function Cart() {

@@ -1,4 +1,4 @@
-.wrap {
+.wrapper {
   padding-bottom: 150px;
 }
 
@@ -8,8 +8,9 @@
   gap: clamp(24px, 4vw, 48px);
   align-items: center;
   justify-self: center;
-  padding: clamp(16px, 3vw, 32px);
-  border-radius: 22px;
+  padding: clamp(20px, 3vw, 36px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
   background: var(--white);
   box-shadow: 0 6px 30px var(--shadow-card);
 }
@@ -29,22 +30,80 @@
   border: 1px solid var(--border-subtle);
 }
 
+.image {
+  width: min(100%, 340px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
 .content {
   max-width: 720px;
 }
 
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.category {
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--orange-hover-surface);
+  color: var(--orange);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .title {
+  margin: 0;
   font-weight: 800;
   letter-spacing: 0.2px;
   font-size: clamp(28px, 4.2vw, 56px);
   line-height: 1.05;
-  margin: 0 0 12px;
 }
 
 .description {
   font-size: clamp(15px, 1.2vw, 18px);
   color: var(--gray-text-dark);
   margin: 8px 0 22px;
+  line-height: 1.45;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 160px));
+  gap: 12px;
+  margin: 0 0 24px;
+
+  div {
+    padding: 14px 16px;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    background: var(--gray-product-surface);
+  }
+
+  dt {
+    margin-bottom: 4px;
+    color: var(--gray-caption);
+    font-size: 13px;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--black);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  @media (width < 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .subtitle {
@@ -57,6 +116,10 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.optionGroup {
+  display: block;
 }
 
 .pills {
@@ -76,34 +139,11 @@
   white-space: nowrap;
 }
 
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 10px;
-}
-
-.price {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.priceValue {
-  font-size: clamp(24px, 3.2vw, 36px);
-  font-weight: 800;
-}
-
-.priceCurrency {
-  font-size: 14px;
-  color: var(--gray-caption);
-}
-
 @media (width < 1024px) {
   .card {
     grid-template-columns: 1fr;
   }
+
   .media {
     max-width: 480px;
     margin: 0 auto;

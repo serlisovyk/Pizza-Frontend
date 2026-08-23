@@ -62,3 +62,12 @@ type DebouncedCancel = {
 }
 
 export type DebounceTimer = ReturnType<typeof setTimeout> | null
+
+export interface ErrorProps {
+  title?: string
+  description?: string
+}
+
+export interface LoaderProps {
+  label?: string
+}

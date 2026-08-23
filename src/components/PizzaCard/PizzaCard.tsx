@@ -43,11 +43,12 @@ export default function PizzaCard({
           alt={`Пицца ${title}`}
           width="260"
           height="260"
-          loading="lazy"
+          loading="eager"
           decoding="async"
+          fetchPriority="high"
         />
       </Link>
-      <h4 className={styles.title}>{title}</h4>
+      <h3 className={styles.title}>{title}</h3>
       <div className={styles.selector}>
         <ul aria-label="Тип теста">
           {types.map((type) => (

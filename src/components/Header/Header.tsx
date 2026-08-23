@@ -18,7 +18,13 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link to={ROUTES.HOME} className={styles.logo} aria-label="На главную">
-          <img width="38" src="img/pizza-logo.svg" alt="" aria-hidden="true" />
+          <img
+            width="38"
+            height="50"
+            src="img/pizza-logo.svg"
+            alt=""
+            aria-hidden="true"
+          />
           <div>
             <h1>React Pizza</h1>
             <p>самая вкусная пицца во вселенной</p>

@@ -1,4 +1,4 @@
-import {
+import type {
   ICartProduct,
   ICartState,
   IProductSearchParams,
@@ -49,9 +49,7 @@ export const buildProductQueryParams = ({
 }: IProductSearchParams): Record<string, any> => {
   const params: Record<string, any> = {
     page: currentPage,
-    limit: 4,
     sortBy: sortProperty,
-    order: 'desc',
   }
 
   if (currentCategory !== 'Все') params.category = currentCategory

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartActions } from '../../redux/store.hooks'
 import { typesNames } from '../../utils/constants'
-import { ICartProduct, IProduct } from '../../types/types'
+import type { ICartProduct, IProduct } from '../../types/types'
 import styles from './PizzaBlock.module.scss'
 
 export default function PizzaBlock({

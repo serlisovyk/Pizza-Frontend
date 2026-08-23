@@ -1,5 +1,5 @@
 import { useCartActions } from '../../redux/store.hooks'
-import { ICartProduct } from '../../types/types'
+import type { ICartProduct } from '../../types/types'
 import styles from './CartItem.module.scss'
 
 export default function CartItem({

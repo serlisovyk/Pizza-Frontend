@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { buildProductQueryParams } from '../../utils/utils'
-import { BASIC_URL } from '../../utils/constants'
-import {
+import { API_URL } from '../../config/config'
+import type {
   ICategory,
   IProduct,
   IProductSearchParams,
@@ -11,7 +11,7 @@ import {
 export const apiSlice = createApi({
   reducerPath: 'api',
 
-  baseQuery: fetchBaseQuery({ baseUrl: BASIC_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
 
   tagTypes: ['Categories', 'Sort', 'Pizzas', 'OnePizza'],
 

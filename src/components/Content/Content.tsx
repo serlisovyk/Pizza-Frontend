@@ -3,7 +3,7 @@ import PizzaBlock from '../PizzaBlock/PizzaBlock'
 import Pagination from '../Pagination/Pagination'
 import Error from '../Error/Error'
 import { usePizzasFromFilters } from '../../hooks/usePizzasFromFilters'
-import { IProduct } from '../../types/types'
+import type { IProduct } from '../../types/types'
 import styles from './Content.module.scss'
 
 export default function Content() {

@@ -3,7 +3,7 @@ import Loader from '../Loader/Loader'
 import { useGetSortListQuery } from '../../redux/api/apiSlice'
 import { selectFilterSort } from '../../redux/slices/filter/filterSlice'
 import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
-import { ISortListItem } from '../../types/types'
+import type { ISortListItem } from '../../types/types'
 import styles from './Sort.module.scss'
 
 export default memo(function Sort() {

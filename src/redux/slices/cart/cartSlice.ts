@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
 import {
   changeTotalPrice,
   deleteItemFromCart,
@@ -6,7 +7,7 @@ import {
   saveCartToLocalStorage,
   searchItemInCart,
 } from '../../../utils/utils'
-import { ICartProduct } from '../../../types/types'
+import type { ICartProduct } from '../../../types/types'
 
 const initialState = loadCartFromLocalStorage()
 

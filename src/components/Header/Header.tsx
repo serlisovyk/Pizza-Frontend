@@ -1,11 +1,8 @@
 import { Link, useLocation } from 'react-router-dom'
-import Search from '../Search/Search'
-import {
-  selectCartTotalCount,
-  selectCartTotalPrice,
-} from '../../redux/slices/cart/cartSlice'
+import Search from '../Search'
+import { selectCartTotalCount, selectCartTotalPrice } from '../../redux/slices/cart'
 import { useAppSelector } from '../../redux/store.hooks'
-import { ROUTES } from '../../config/config'
+import { ROUTES } from '../../config'
 import styles from './Header.module.scss'
 
 export default function Header() {

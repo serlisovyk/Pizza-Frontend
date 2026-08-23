@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { ALL_CATEGORY_NAME } from '../../../constants/constants'
-import type { IFilterState, ISortListItem } from '../../../types/types'
+import { ALL_CATEGORY_NAME } from '../../../constants'
+import type { IFilterState, ISortListItem } from '../../../types'
 
 const initialState: IFilterState = {
   searchValue: '',

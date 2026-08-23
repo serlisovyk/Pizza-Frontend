@@ -1,10 +1,10 @@
-import Categories from '../../components/Categories/Categories'
-import Sort from '../../components/Sort/Sort'
-import Content from '../../components/Content/Content'
+import Categories from '../../components/Categories'
+import Sort from '../../components/Sort'
+import Content from '../../components/Content'
 import {
   selectFilterCurrentCategory,
   selectFilterSearchValue,
-} from '../../redux/slices/filter/filterSlice'
+} from '../../redux/slices/filter'
 import { useAppSelector } from '../../redux/store.hooks'
 import { generateTitle } from '../../utils/utils'
 import styles from './Home.module.scss'

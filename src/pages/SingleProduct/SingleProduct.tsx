@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom'
 import { skipToken } from '@reduxjs/toolkit/query'
-import Loader from '../../components/Loader/Loader'
-import Error from '../../components/Error/Error'
-import { useGetOnePizzaQuery } from '../../redux/api/apiSlice'
-import { PIZZA_TYPE_NAMES } from '../../constants/constants'
+import Loader from '../../components/Loader'
+import Error from '../../components/Error'
+import { useGetOnePizzaQuery } from '../../redux/api'
+import { PIZZA_TYPE_NAMES } from '../../constants'
 import styles from './SingleProduct.module.scss'
 
 export default function SingleProduct() {

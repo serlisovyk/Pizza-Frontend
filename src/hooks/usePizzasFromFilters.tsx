@@ -3,8 +3,8 @@ import {
   selectFilterSortProperty,
   selectFilterCurrentPage,
   selectFilterCurrentCategory,
-} from '../redux/slices/filter/filterSlice'
-import { useGetPizzasQuery } from '../redux/api/apiSlice'
+} from '../redux/slices/filter'
+import { useGetPizzasQuery } from '../redux/api'
 import { useAppSelector } from '../redux/store.hooks'
 
 export function usePizzasFromFilters() {

@@ -1,10 +1,9 @@
-import Skeleton from '../PizzaCard/Skeleton'
-import PizzaCard from '../PizzaCard/PizzaCard'
-import Pagination from '../Pagination/Pagination'
-import Error from '../Error/Error'
-import Empty from '../Empty/Empty'
+import PizzaCard, { PizzaCardSkeleton } from '../PizzaCard'
+import Pagination from '../Pagination'
+import Error from '../Error'
+import Empty from '../Empty'
 import { usePizzasFromFilters } from '../../hooks/usePizzasFromFilters'
-import type { IProduct } from '../../types/types'
+import type { IProduct } from '../../types'
 import styles from './Content.module.scss'
 
 const PRODUCT_PAGE_LIMIT = 4
@@ -23,7 +22,9 @@ export default function Content() {
             <Error />
           </div>
         ) : isLoading ? (
-          [...new Array(PRODUCT_PAGE_LIMIT)].map((_, i) => <Skeleton key={i} />)
+          [...new Array(PRODUCT_PAGE_LIMIT)].map((_, i) => (
+            <PizzaCardSkeleton key={i} />
+          ))
         ) : !products?.length ? (
           <div className={styles.state}>
             <Empty />

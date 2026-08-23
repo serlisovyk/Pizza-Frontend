@@ -1,4 +1,4 @@
-import { selectFilterCurrentPage } from '../../redux/slices/filter/filterSlice'
+import { selectFilterCurrentPage } from '../../redux/slices/filter'
 import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
 import styles from './Pagination.module.scss'
 

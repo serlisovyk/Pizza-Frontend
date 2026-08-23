@@ -1,8 +1,8 @@
 import Skeleton from './Skeleton'
-import { useGetCategoriesQuery } from '../../redux/api/apiSlice'
-import { selectFilterCurrentCategory } from '../../redux/slices/filter/filterSlice'
+import { useGetCategoriesQuery } from '../../redux/api'
+import { selectFilterCurrentCategory } from '../../redux/slices/filter'
 import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
-import { ALL_CATEGORY } from '../../constants/constants'
+import { ALL_CATEGORY } from '../../constants'
 import styles from './Categories.module.scss'
 
 export default function Categories() {

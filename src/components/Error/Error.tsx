@@ -1,4 +1,4 @@
-import type { ErrorProps } from '../../types/types'
+import type { ErrorProps } from '../../types'
 import styles from './Error.module.scss'
 
 export default function Error({

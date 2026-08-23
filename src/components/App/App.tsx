@@ -1,5 +1,5 @@
-import Header from '../Header/Header'
-import AppRoutes from '../AppRoutes/AppRoutes'
+import Header from '../Header'
+import AppRoutes from '../AppRoutes'
 import styles from './App.module.scss'
 
 export default function App() {

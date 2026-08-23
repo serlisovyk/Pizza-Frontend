@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { buildProductQueryParams } from '../../utils/utils'
-import { API_URL } from '../../config/config'
+import { API_URL } from '../../config'
 import type {
   ICategory,
   IProduct,
   IProductSearchParams,
   ISortListItem,
-} from '../../types/types'
+} from '../../types'
 
 export const apiSlice = createApi({
   reducerPath: 'api',

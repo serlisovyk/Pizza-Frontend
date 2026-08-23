@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ROUTES } from '../../config/config'
+import { ROUTES } from '../../config'
 import styles from './CartEmpty.module.scss'
 
 export default function CartEmpty() {

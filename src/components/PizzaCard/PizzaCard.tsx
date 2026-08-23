@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartActions } from '../../redux/store.hooks'
-import { PIZZA_TYPE_NAMES } from '../../constants/constants'
-import type { ICartProduct, IProduct } from '../../types/types'
+import { PIZZA_TYPE_NAMES } from '../../constants'
+import type { ICartProduct, IProduct } from '../../types'
 import styles from './PizzaCard.module.scss'
 
 export default function PizzaCard({

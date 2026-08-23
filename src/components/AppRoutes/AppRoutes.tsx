@@ -1,22 +1,17 @@
 import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Home from '../../pages/Home/Home'
-import Loader from '../Loader/Loader'
-import { ROUTES } from '../../config/config'
+import Home from '../../pages/Home'
+import Loader from '../Loader'
+import { ROUTES } from '../../config'
 
-const Cart = lazy(
-  () => import(/* webpackChunkName: "Cart" */ '../../pages/Cart/Cart'),
-)
+const Cart = lazy(() => import(/* webpackChunkName: "Cart" */ '../../pages/Cart'))
 
 const SingleProduct = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "SingleProduct" */ '../../pages/SingleProduct/SingleProduct'
-    ),
+  () => import(/* webpackChunkName: "SingleProduct" */ '../../pages/SingleProduct'),
 )
 
 const NotFound = lazy(
-  () => import(/* webpackChunkName: "NotFound" */ '../../pages/NotFound/NotFound'),
+  () => import(/* webpackChunkName: "NotFound" */ '../../pages/NotFound'),
 )
 
 export default function AppRoutes() {

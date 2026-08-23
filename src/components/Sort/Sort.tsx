@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import Skeleton from './Skeleton'
-import { useGetSortListQuery } from '../../redux/api/apiSlice'
-import { selectFilterSort } from '../../redux/slices/filter/filterSlice'
+import { useGetSortListQuery } from '../../redux/api'
+import { selectFilterSort } from '../../redux/slices/filter'
 import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
-import type { ISortListItem } from '../../types/types'
+import type { ISortListItem } from '../../types'
 import styles from './Sort.module.scss'
 
 export default function Sort() {

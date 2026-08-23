@@ -1,8 +1,8 @@
 import { bindActionCreators } from '@reduxjs/toolkit'
 import { useDispatch, useSelector } from 'react-redux'
 import { useMemo } from 'react'
-import { cartActions } from './slices/cart/cartSlice'
-import { filterActions } from './slices/filter/filterSlice'
+import { cartActions } from './slices/cart'
+import { filterActions } from './slices/filter'
 import type { AppDispatch, AppState } from './store'
 
 export const useAppSelector = useSelector.withTypes<AppState>()

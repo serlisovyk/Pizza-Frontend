@@ -7,7 +7,7 @@ import {
   saveCartToLocalStorage,
   searchItemInCart,
 } from '../../../utils/utils'
-import type { ICartProduct } from '../../../types/types'
+import type { ICartProduct } from '../../../types'
 
 const initialState = loadCartFromLocalStorage()
 

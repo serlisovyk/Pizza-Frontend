@@ -4,8 +4,8 @@ import type {
   IProductSearchParams,
   Debounced,
   DebounceTimer,
-} from '../types/types'
-import { ALL_CATEGORY_NAME } from '../constants/constants'
+} from '../types'
+import { ALL_CATEGORY_NAME } from '../constants'
 
 export const changeTotalPrice = (state: ICartState) => {
   state.totalPrice = state.items.reduce(

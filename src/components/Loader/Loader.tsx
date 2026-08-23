@@ -1,4 +1,4 @@
-import type { LoaderProps } from '../../types/types'
+import type { LoaderProps } from '../../types'
 import styles from './Loader.module.scss'
 
 export default function Loader({ label = 'Загрузка...' }: LoaderProps) {

@@ -27,6 +27,8 @@ export default function Cart() {
         <div className={styles.top}>
           <h2 className={styles.title}>
             <svg
+              aria-hidden="true"
+              focusable="false"
               width="18"
               height="18"
               viewBox="0 0 18 18"
@@ -57,8 +59,10 @@ export default function Cart() {
             </svg>
             Корзина
           </h2>
-          <div className={styles.clear}>
+          <button className={styles.clear} type="button" onClick={handleClickClear}>
             <svg
+              aria-hidden="true"
+              focusable="false"
               width="20"
               height="20"
               viewBox="0 0 20 20"
@@ -94,8 +98,8 @@ export default function Cart() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span onClick={handleClickClear}>Очистить корзину</span>
-          </div>
+            <span>Очистить корзину</span>
+          </button>
         </div>
         <div className={styles.items}>
           {items.map((item) => (
@@ -117,6 +121,8 @@ export default function Cart() {
               className={`button button--outline button--add ${styles.goBackButton}`}
             >
               <svg
+                aria-hidden="true"
+                focusable="false"
                 width="8"
                 height="14"
                 viewBox="0 0 8 14"
@@ -133,9 +139,9 @@ export default function Cart() {
               </svg>
               <span>Вернуться назад</span>
             </Link>
-            <div className={`button ${styles.payButton}`}>
+            <button className={`button ${styles.payButton}`} type="button">
               <span>Оплатить сейчас</span>
-            </div>
+            </button>
           </div>
         </div>
       </div>

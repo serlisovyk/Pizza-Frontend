@@ -32,18 +32,31 @@
     }
 
     li {
+      flex: 1;
+    }
+
+    button {
+      width: 100%;
       text-align: center;
       padding: 8px;
-      flex: 1;
+      border: 0;
+      border-radius: 5px;
+      background: transparent;
       cursor: pointer;
+      font: inherit;
       font-weight: 600;
       font-size: 14px;
       user-select: none;
+
       &.active {
         background: var(--white);
         box-shadow: 0 2px 4px var(--shadow);
-        border-radius: 5px;
         cursor: auto;
+      }
+
+      &:focus-visible {
+        outline: 3px solid var(--orange-focus);
+        outline-offset: 2px;
       }
     }
   }

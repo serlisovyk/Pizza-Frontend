@@ -78,7 +78,7 @@
       width: auto;
     }
 
-    .button {
+    :global(.button) {
       border-color: var(--gray-line-border);
     }
 
@@ -90,12 +90,13 @@
       }
     }
 
-    .button {
+    :global(.button) {
       svg {
         width: 11.5px;
         height: 11.5px;
         position: relative;
       }
+
       &:hover,
       &:active {
         border-color: var(--gray-line-active);

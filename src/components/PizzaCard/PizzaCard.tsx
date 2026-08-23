@@ -36,38 +36,51 @@ export default function PizzaCard({
 
   return (
     <div className={styles.card}>
-      <Link to={`/pizza/${_id}`}>
-        <img className={styles.image} src={'/' + imageUrl} alt="Pizza" />
+      <Link to={`/pizza/${_id}`} aria-label={`Открыть пиццу ${title}`}>
+        <img className={styles.image} src={'/' + imageUrl} alt={`Пицца ${title}`} />
       </Link>
       <h4 className={styles.title}>{title}</h4>
       <div className={styles.selector}>
-        <ul>
+        <ul aria-label="Тип теста">
           {types.map((type) => (
-            <li
-              key={type}
-              onClick={() => handleChangeActiveType(type)}
-              className={activeType === type ? styles.active : ''}
-            >
-              {PIZZA_TYPE_NAMES[type]}
+            <li key={type}>
+              <button
+                type="button"
+                onClick={() => handleChangeActiveType(type)}
+                className={activeType === type ? styles.active : ''}
+                aria-pressed={activeType === type}
+              >
+                {PIZZA_TYPE_NAMES[type]}
+              </button>
             </li>
           ))}
         </ul>
-        <ul>
+        <ul aria-label="Размер пиццы">
           {sizes.map((size, i) => (
-            <li
-              key={size}
-              onClick={() => handleChangeActiveSize(i)}
-              className={activeSize === i ? styles.active : ''}
-            >
-              {size} см.
+            <li key={size}>
+              <button
+                type="button"
+                onClick={() => handleChangeActiveSize(i)}
+                className={activeSize === i ? styles.active : ''}
+                aria-pressed={activeSize === i}
+              >
+                {size} см.
+              </button>
             </li>
           ))}
         </ul>
       </div>
       <div className={styles.bottom}>
         <div className={styles.price}>от {price} грн.</div>
-        <div className="button button--outline button--add" onClick={handleClickBtn}>
+        <button
+          className="button button--outline button--add"
+          type="button"
+          onClick={handleClickBtn}
+          aria-label={`Добавить пиццу ${title} в корзину`}
+        >
           <svg
+            aria-hidden="true"
+            focusable="false"
             width="12"
             height="12"
             viewBox="0 0 12 12"
@@ -80,7 +93,7 @@ export default function PizzaCard({
             />
           </svg>
           <span>Добавить</span>
-        </div>
+        </button>
       </div>
     </div>
   )

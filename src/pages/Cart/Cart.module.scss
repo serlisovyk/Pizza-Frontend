@@ -39,8 +39,12 @@
   .clear {
     display: flex;
     align-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
     color: var(--gray-cart);
     cursor: pointer;
+    font: inherit;
     user-select: none;
 
     span {
@@ -61,6 +65,11 @@
       span {
         color: var(--gray-cart-hover);
       }
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--orange-focus);
+      outline-offset: 3px;
     }
   }
   .items {

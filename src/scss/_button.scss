@@ -1,4 +1,5 @@
 .button {
+  appearance: none;
   display: inline-block;
   background-color: var(--orange);
   border-radius: 30px;
@@ -10,6 +11,7 @@
     background-color var(--duration) ease-in-out,
     border-color var(--duration) ease-in-out;
   border: 1px solid transparent;
+  font: inherit;
   user-select: none;
 
   &,
@@ -31,6 +33,11 @@
   &:active {
     background-color: var(--orange-active);
     transform: translateY(1px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--orange-focus);
+    outline-offset: 3px;
   }
 
   &--circle {

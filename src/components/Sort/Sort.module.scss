@@ -15,10 +15,19 @@
       margin-right: 8px;
     }
 
-    span {
+    .value {
+      padding: 0;
+      border: 0;
+      background: transparent;
       color: var(--orange);
       border-bottom: 1px dashed var(--orange);
       cursor: pointer;
+      font: inherit;
+
+      &:focus-visible {
+        outline: 3px solid var(--orange-focus);
+        outline-offset: 3px;
+      }
     }
   }
 
@@ -35,12 +44,24 @@
 
     ul {
       overflow: hidden;
-      li {
-        padding: 12px 20px;
-        cursor: pointer;
 
-        &:hover {
+      button {
+        width: 100%;
+        padding: 12px 20px;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        font: inherit;
+        text-align: left;
+
+        &:hover,
+        &:focus-visible {
           background: var(--orange-hover-surface);
+        }
+
+        &:focus-visible {
+          outline: 3px solid var(--orange-focus);
+          outline-offset: -3px;
         }
       }
     }

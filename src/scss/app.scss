@@ -17,3 +17,10 @@ h2 {
   font-size: 28px;
   line-height: 30px;
 }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--orange-focus);
+  outline-offset: 3px;
+}

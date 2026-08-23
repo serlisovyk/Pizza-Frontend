@@ -17,8 +17,8 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link to={ROUTES.HOME} className={styles.logo}>
-          <img width="38" src="img/pizza-logo.svg" alt="Pizza logo" />
+        <Link to={ROUTES.HOME} className={styles.logo} aria-label="На главную">
+          <img width="38" src="img/pizza-logo.svg" alt="" aria-hidden="true" />
           <div>
             <h1>React Pizza</h1>
             <p>самая вкусная пицца во вселенной</p>
@@ -31,10 +31,13 @@ export default function Header() {
               <Link
                 to={ROUTES.CART}
                 className={`${styles.cartButton} button button--cart`}
+                aria-label={`Корзина: ${totalCount} шт., ${totalPrice} грн.`}
               >
                 <span>{totalPrice} ₴</span>
-                <div className="button__delimiter"></div>
+                <div className="button__delimiter" aria-hidden="true"></div>
                 <svg
+                  aria-hidden="true"
+                  focusable="false"
                   width="18"
                   height="18"
                   viewBox="0 0 18 18"

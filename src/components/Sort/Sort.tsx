@@ -22,6 +22,12 @@ export default function Sort() {
     setIsOpen(false)
   }
 
+  function handleKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {
+    if (e.key === 'Escape') {
+      setIsOpen(false)
+    }
+  }
+
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (sortRef.current && !e.composedPath().includes(sortRef.current)) {
@@ -37,9 +43,11 @@ export default function Sort() {
   if (isLoading) return <Skeleton />
 
   return (
-    <div ref={sortRef} className={styles.sort}>
+    <div ref={sortRef} className={styles.sort} onKeyDown={handleKeyDown}>
       <div className={styles.label}>
         <svg
+          aria-hidden="true"
+          focusable="false"
           width="10"
           height="6"
           viewBox="0 0 10 6"
@@ -52,22 +60,35 @@ export default function Sort() {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setIsOpen((prev) => !prev)}>{sort.name}</span>
+        <button
+          className={styles.value}
+          type="button"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-expanded={isOpen}
+          aria-haspopup="menu"
+          aria-controls="sort-options"
+          aria-label={`Сортировка по: ${sort.name}`}
+        >
+          {sort.name}
+        </button>
       </div>
       {isOpen && (
-        <div className={styles.popup}>
+        <div className={styles.popup} id="sort-options">
           <ul>
             {sortList?.map((sortListItem, i) => (
-              <li
-                key={i}
-                onClick={() => handleClickListItem(sortListItem)}
-                className={
-                  sort.sortProperty === sortListItem.sortProperty
-                    ? styles.active
-                    : ''
-                }
-              >
-                {sortListItem.name}
+              <li key={i}>
+                <button
+                  type="button"
+                  onClick={() => handleClickListItem(sortListItem)}
+                  className={
+                    sort.sortProperty === sortListItem.sortProperty
+                      ? styles.active
+                      : ''
+                  }
+                  aria-pressed={sort.sortProperty === sortListItem.sortProperty}
+                >
+                  {sortListItem.name}
+                </button>
               </li>
             ))}
           </ul>

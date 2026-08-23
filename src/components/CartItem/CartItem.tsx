@@ -30,7 +30,7 @@ export default function CartItem({
   return (
     <div className={styles.item}>
       <div className={styles.img}>
-        <img src={imageUrl} alt="Pizza" />
+        <img src={imageUrl} alt={`Пицца ${title}`} />
       </div>
       <div className={styles.info}>
         <h3>{title}</h3>
@@ -39,11 +39,15 @@ export default function CartItem({
         </p>
       </div>
       <div className={styles.count}>
-        <div
-          onClick={handleClickMinus}
+        <button
           className={`button button--outline button--circle ${styles.minusButton}`}
+          type="button"
+          onClick={handleClickMinus}
+          aria-label={`Уменьшить количество ${title}`}
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             width="10"
             height="10"
             viewBox="0 0 10 10"
@@ -59,13 +63,17 @@ export default function CartItem({
               fill="currentColor"
             />
           </svg>
-        </div>
+        </button>
         <b>{count}</b>
-        <div
-          onClick={handleClickPlus}
+        <button
           className="button button--outline button--circle"
+          type="button"
+          onClick={handleClickPlus}
+          aria-label={`Увеличить количество ${title}`}
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             width="10"
             height="10"
             viewBox="0 0 10 10"
@@ -81,17 +89,21 @@ export default function CartItem({
               fill="currentColor"
             />
           </svg>
-        </div>
+        </button>
       </div>
       <div className={styles.price}>
         <b>{price * count} грн.</b>
       </div>
       <div className={styles.remove}>
-        <div
-          onClick={handleClickRemove}
+        <button
           className="button button--outline button--circle"
+          type="button"
+          onClick={handleClickRemove}
+          aria-label={`Удалить ${title} из корзины`}
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             width="10"
             height="10"
             viewBox="0 0 10 10"
@@ -107,7 +119,7 @@ export default function CartItem({
               fill="currentColor"
             />
           </svg>
-        </div>
+        </button>
       </div>
     </div>
   )

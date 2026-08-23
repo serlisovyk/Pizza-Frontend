@@ -5,18 +5,18 @@ import Loader from '../Loader/Loader'
 import { ROUTES } from '../../config/config'
 
 const Cart = lazy(
-  () => import(/* webpackChunkName: "Cart" */ '../../pages/Cart/Cart')
+  () => import(/* webpackChunkName: "Cart" */ '../../pages/Cart/Cart'),
 )
 
 const SingleProduct = lazy(
   () =>
     import(
       /* webpackChunkName: "SingleProduct" */ '../../pages/SingleProduct/SingleProduct'
-    )
+    ),
 )
 
 const NotFound = lazy(
-  () => import(/* webpackChunkName: "NotFound" */ '../../pages/NotFound/NotFound')
+  () => import(/* webpackChunkName: "NotFound" */ '../../pages/NotFound/NotFound'),
 )
 
 export default function AppRoutes() {

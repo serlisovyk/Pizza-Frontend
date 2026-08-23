@@ -19,7 +19,7 @@ export default function Search() {
 
   const debouncedSetSearchValue = useMemo(
     () => debounce((str: string) => setSearchValue(str), 250),
-    [setSearchValue]
+    [setSearchValue],
   )
 
   useEffect(() => debouncedSetSearchValue.cancel(), [debouncedSetSearchValue])

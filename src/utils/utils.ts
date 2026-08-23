@@ -9,7 +9,7 @@ import type {
 export const changeTotalPrice = (state: ICartState) => {
   state.totalPrice = state.items.reduce(
     (sum: number, item) => item.price * item.count + sum,
-    0
+    0,
   )
 }
 
@@ -18,7 +18,7 @@ export const deleteItemFromCart = (state: ICartState, payload: ICartProduct) => 
     (item) =>
       item._id !== payload._id ||
       item.size !== payload.size ||
-      item.type !== payload.type
+      item.type !== payload.type,
   )
 }
 
@@ -27,7 +27,7 @@ export const searchItemInCart = (state: ICartState, payload: ICartProduct) => {
     (item) =>
       item._id === payload._id &&
       item.size === payload.size &&
-      item.type === payload.type
+      item.type === payload.type,
   )
   return findItem
 }
@@ -72,7 +72,7 @@ export function generateTitle(searchValue: string, currentCategory: string) {
 
 export function debounce<Function extends (...args: any[]) => void>(
   fn: Function,
-  wait = 0
+  wait = 0,
 ): Debounced<Function> {
   let timer: DebounceTimer = null
   let lastArgs: Parameters<Function> | null = null

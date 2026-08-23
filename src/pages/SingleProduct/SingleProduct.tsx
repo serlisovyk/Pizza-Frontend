@@ -33,6 +33,7 @@ export default function SingleProduct() {
             src={`/${imageUrl}`}
             alt={title}
             loading="eager"
+            decoding="async"
             width={260}
             height={260}
           />

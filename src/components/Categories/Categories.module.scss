@@ -36,7 +36,9 @@
     }
   }
 
-  .active {
+  .active,
+  .active:hover,
+  .active:active {
     background-color: var(--black-soft);
     color: var(--white);
   }

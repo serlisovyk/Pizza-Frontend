@@ -6,9 +6,16 @@
     display: flex;
     align-items: center;
 
-    svg {
+    .arrow {
       margin-right: 8px;
       color: var(--black-icon);
+      transform: rotate(180deg);
+      transition: transform 0.2s ease-in-out;
+      transform-origin: center;
+    }
+
+    .arrowOpen {
+      transform: rotate(0deg);
     }
 
     b {
@@ -41,6 +48,14 @@
     overflow: hidden;
     padding: 10px 0;
     width: 160px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    visibility: hidden;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0s linear 0.2s;
 
     ul {
       overflow: hidden;
@@ -65,6 +80,14 @@
         }
       }
     }
+  }
+
+  .open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+    transition-delay: 0s;
   }
 }
 

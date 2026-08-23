@@ -37,7 +37,15 @@ export default function PizzaCard({
   return (
     <div className={styles.card}>
       <Link to={`/pizza/${_id}`} aria-label={`Открыть пиццу ${title}`}>
-        <img className={styles.image} src={'/' + imageUrl} alt={`Пицца ${title}`} />
+        <img
+          className={styles.image}
+          src={`/${imageUrl}`}
+          alt={`Пицца ${title}`}
+          width="260"
+          height="260"
+          loading="lazy"
+          decoding="async"
+        />
       </Link>
       <h4 className={styles.title}>{title}</h4>
       <div className={styles.selector}>

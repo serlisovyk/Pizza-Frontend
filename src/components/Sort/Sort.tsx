@@ -46,6 +46,7 @@ export default function Sort() {
     <div ref={sortRef} className={styles.sort} onKeyDown={handleKeyDown}>
       <div className={styles.label}>
         <svg
+          className={`${styles.arrow} ${isOpen ? styles.arrowOpen : ''}`}
           aria-hidden="true"
           focusable="false"
           width="10"
@@ -72,28 +73,30 @@ export default function Sort() {
           {sort.name}
         </button>
       </div>
-      {isOpen && (
-        <div className={styles.popup} id="sort-options">
-          <ul>
-            {sortList?.map((sortListItem, i) => (
-              <li key={i}>
-                <button
-                  type="button"
-                  onClick={() => handleClickListItem(sortListItem)}
-                  className={
-                    sort.sortProperty === sortListItem.sortProperty
-                      ? styles.active
-                      : ''
-                  }
-                  aria-pressed={sort.sortProperty === sortListItem.sortProperty}
-                >
-                  {sortListItem.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div
+        className={`${styles.popup} ${isOpen ? styles.open : ''}`}
+        id="sort-options"
+        aria-hidden={!isOpen}
+      >
+        <ul>
+          {sortList?.map((sortListItem, i) => (
+            <li key={i}>
+              <button
+                type="button"
+                onClick={() => handleClickListItem(sortListItem)}
+                className={
+                  sort.sortProperty === sortListItem.sortProperty
+                    ? styles.active
+                    : ''
+                }
+                aria-pressed={sort.sortProperty === sortListItem.sortProperty}
+              >
+                {sortListItem.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }

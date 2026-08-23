@@ -9,7 +9,7 @@
     column-gap: 24px;
     padding-inline: 20px;
 
-    @media (max-width: 1000px) {
+    @media (width < 1024px) {
       grid-template-columns: minmax(0, 1fr);
       justify-items: center;
       gap: 20px;
@@ -24,29 +24,29 @@
     display: flex;
     justify-self: start;
 
-    @media (max-width: 1000px) {
+    @media (width < 1024px) {
       justify-self: center;
     }
 
     img {
       margin-right: 15px;
 
-      @media (max-width: 767px) {
+      @media (width < 768px) {
         margin-right: 10px;
       }
     }
 
     h1 {
-      color: #181818;
+      color: var(--black-heading);
       font-size: 24px;
-      letter-spacing: 1%;
+      letter-spacing: 0.01em;
       text-transform: uppercase;
       font-weight: 800;
     }
 
     p {
       white-space: nowrap;
-      color: #7b7b7b;
+      color: var(--gray-muted);
     }
   }
 
@@ -55,7 +55,7 @@
     min-width: 158px;
     white-space: nowrap;
 
-    @media (max-width: 1000px) {
+    @media (width < 1024px) {
       justify-self: center;
     }
   }

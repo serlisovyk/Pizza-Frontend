@@ -1,8 +1,47 @@
 :root {
   --black: #232323;
-  --yellow: #ffdf8c;
-  --gray-line: #f6f6f6;
+  --black-soft: #282828;
+  --black-heading: #181818;
+  --black-icon: #2c2c2c;
+  --black-hover: #3d3d3d;
+  --white: #fff;
+  --white-muted: rgb(255 255 255 / 25%);
+
   --orange: #fe5f1e;
+  --orange-hover: #e84b0e;
+  --orange-active: #d8450d;
+  --orange-focus: rgb(254 95 30 / 30%);
+  --orange-hover-surface: rgb(254 95 30 / 5%);
+  --yellow: #ffdf8c;
+
+  --gray-line: #f6f6f6;
+  --gray-line-border: #dddddd;
+  --gray-line-text: #c3c3c3;
+  --gray-line-icon: #d0d0d0;
+  --gray-line-active: #292929;
+  --gray-soft: #f9f9f9;
+  --gray-soft-hover: #f4f4f4;
+  --gray-soft-active: #ececec;
+  --gray-surface: #f5f5f5;
+  --gray-control: #f3f3f3;
+  --gray-loader-border: #f0f0f0;
+  --gray-skeleton: #ececec;
+  --gray-product-surface: #fafafa;
+  --gray-text: #555;
+  --gray-text-dark: #333;
+  --gray-muted: #7b7b7b;
+  --gray-caption: #666;
+  --gray-cart: #b6b6b6;
+  --gray-cart-hover: #373737;
+
+  --shadow: rgb(0 0 0 / 4%);
+  --shadow-popup: rgb(0 0 0 / 9%);
+  --shadow-card: rgb(0 0 0 / 6%);
+  --border-subtle: rgb(0 0 0 / 5%);
+  --border-soft: rgb(0 0 0 / 6%);
+  --border-input: rgb(0 0 0 / 10%);
+  --border-input-focus: rgb(0 0 0 / 20%);
+
   --container-width: 90%;
   --duration: 0.15s;
 }

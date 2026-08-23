@@ -1,12 +1,12 @@
 .wrapper {
   width: calc(100vw - 100px);
   min-height: calc(100vh - 100px);
-  background-color: #fff;
+  background-color: var(--white);
   margin: 50px auto;
   border-radius: 10px;
   max-width: 1400px;
 
-  @media (max-width: 767px) {
+  @media (width < 768px) {
     width: auto;
   }
 }
@@ -14,7 +14,7 @@
 .content {
   padding: 40px 0;
 
-  @media (max-width: 767px) {
+  @media (width < 768px) {
     padding: 20px 0;
   }
 }

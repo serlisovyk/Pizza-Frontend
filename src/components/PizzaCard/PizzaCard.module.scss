@@ -18,7 +18,7 @@
 
 .selector {
   display: flex;
-  background-color: #f3f3f3;
+  background-color: var(--gray-control);
   border-radius: 10px;
   flex-direction: column;
   padding: 6px;
@@ -40,8 +40,8 @@
       font-size: 14px;
       user-select: none;
       &.active {
-        background: #ffffff;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+        background: var(--white);
+        box-shadow: 0 2px 4px var(--shadow);
         border-radius: 5px;
         cursor: auto;
       }
@@ -58,7 +58,7 @@
 }
 
 .price {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 22px;
   line-height: 27px;
   letter-spacing: 0.015em;

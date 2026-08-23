@@ -14,7 +14,7 @@
 
   &,
   span {
-    color: #fff;
+    color: var(--white);
   }
 
   i,
@@ -25,11 +25,11 @@
   }
 
   &:hover {
-    background-color: darken(#fe5f1e, 8%);
+    background-color: var(--orange-hover);
   }
 
   &:active {
-    background-color: darken(#fe5f1e, 12%);
+    background-color: var(--orange-active);
     transform: translateY(1px);
   }
 
@@ -49,12 +49,12 @@
 
     &:hover,
     &:active {
-      background-color: lighten(#232323, 10);
+      background-color: var(--black-hover);
     }
   }
 
   &--outline {
-    background-color: #fff;
+    background-color: var(--white);
     border-color: var(--orange);
     &,
     span {
@@ -72,25 +72,25 @@
 
       svg {
         path {
-          fill: #fff;
+          fill: var(--white);
         }
       }
 
       &,
       span {
-        color: #fff;
+        color: var(--white);
       }
     }
 
     &:active {
-      background-color: darken(#fe5f1e, 8%);
+      background-color: var(--orange-hover);
     }
   }
 
   &__delimiter {
     width: 1px;
     height: 25px;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: var(--white-muted);
     margin-left: 14px;
     margin-right: 14px;
   }
@@ -109,7 +109,7 @@
       display: inline-block;
       border-radius: 30px;
       background-color: var(--orange);
-      color: #fff;
+      color: var(--white);
       font-weight: 600;
       width: 22px;
       height: 22px;

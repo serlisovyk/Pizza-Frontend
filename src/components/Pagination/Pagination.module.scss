@@ -1,4 +1,4 @@
-.root {
+.wrapper {
   display: flex;
   gap: 10px;
   margin-top: 40px;
@@ -12,10 +12,10 @@
   justify-content: center;
   width: 45px;
   height: 45px;
-  border: 1px solid #fe5f1e;
+  border: 1px solid var(--orange);
   border-radius: 30px;
-  background-color: #fff;
-  color: #fe5f1e;
+  background-color: var(--white);
+  color: var(--orange);
   cursor: pointer;
   font: inherit;
   font-weight: 700;
@@ -25,12 +25,12 @@
     opacity 0.2s ease;
 
   &:hover:not(:disabled) {
-    background-color: #fe5f1e;
-    color: #fff;
+    background-color: var(--orange);
+    color: var(--white);
   }
 
   &:focus-visible {
-    outline: 3px solid rgba(#fe5f1e, 0.3);
+    outline: 3px solid var(--orange-focus);
     outline-offset: 3px;
   }
 
@@ -41,6 +41,6 @@
 }
 
 .active {
-  background-color: #fe5f1e;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
 }

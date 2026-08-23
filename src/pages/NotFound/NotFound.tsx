@@ -2,7 +2,7 @@ import styles from './NotFound.module.scss'
 
 export default function NotFound() {
   return (
-    <div className={styles.root}>
+    <div className={styles.wrapper}>
       <h2>
         <span>😢</span> <br />
         Ничего не найдено

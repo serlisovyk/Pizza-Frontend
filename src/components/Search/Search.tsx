@@ -30,7 +30,7 @@ export default function Search() {
   }
 
   return (
-    <div className={styles.root}>
+    <div className={styles.wrapper}>
       <label htmlFor="search" />
       <input
         ref={inputRef}

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../config/config'
+import styles from './CartEmpty.module.scss'
 
 export default function CartEmpty() {
   return (
     <>
-      <div className="cartEmpty">
+      <div className={styles.wrapper}>
         <h2>Корзина пустая 😕</h2>
         <p>
           Вероятней всего, вы не заказывали ещё пиццу.

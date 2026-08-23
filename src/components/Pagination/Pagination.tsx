@@ -18,7 +18,7 @@ export default function Pagination() {
   }
 
   return (
-    <nav className={styles.root} aria-label="Пагинация товаров">
+    <nav className={styles.wrapper} aria-label="Пагинация товаров">
       <button
         className={styles.control}
         type="button"

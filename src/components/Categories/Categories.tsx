@@ -24,7 +24,7 @@ export default function Categories() {
             <li
               key={category._id}
               onClick={() => setActiveCategory(category.name)}
-              className={currentCategory === category.name ? 'categoriesActive' : ''}
+              className={currentCategory === category.name ? styles.active : ''}
             >
               {category.name}
             </li>

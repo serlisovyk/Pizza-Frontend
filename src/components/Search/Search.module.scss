@@ -1,11 +1,11 @@
-.root {
+.wrapper {
   position: relative;
   width: min(100%, 320px);
 }
 
 .input {
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-input);
   padding: 12px 20px;
   width: 100%;
   box-sizing: border-box;
@@ -14,7 +14,7 @@
   transition: all 0.2s ease-in-out;
 
   &:focus {
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-input-focus);
   }
 }
 .clearIcon {

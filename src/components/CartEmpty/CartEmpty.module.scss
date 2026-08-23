@@ -1,0 +1,21 @@
+.wrapper {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+
+  p {
+    margin-block: 10px;
+
+    @media (width < 768px) {
+      margin-block: 20px;
+    }
+
+    @media (width < 480px) {
+      font-size: 14px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

@@ -3,13 +3,15 @@
   padding: 40px 0;
 
   .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(260px, 320px) minmax(180px, 1fr);
     align-items: center;
-    justify-content: space-between;
+    column-gap: 24px;
     padding-inline: 20px;
 
     @media (max-width: 1000px) {
-      flex-direction: column;
+      grid-template-columns: minmax(0, 1fr);
+      justify-items: center;
       gap: 20px;
     }
   }
@@ -20,6 +22,11 @@
 
   .logo {
     display: flex;
+    justify-self: start;
+
+    @media (max-width: 1000px) {
+      justify-self: center;
+    }
 
     img {
       margin-right: 15px;
@@ -40,6 +47,16 @@
     p {
       white-space: nowrap;
       color: #7b7b7b;
+    }
+  }
+
+  .cartButton {
+    justify-self: end;
+    min-width: 158px;
+    white-space: nowrap;
+
+    @media (max-width: 1000px) {
+      justify-self: center;
     }
   }
 }

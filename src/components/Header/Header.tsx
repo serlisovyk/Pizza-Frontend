@@ -24,11 +24,14 @@ export default function Header() {
             <p>самая вкусная пицца во вселенной</p>
           </div>
         </Link>
-        {pathname !== '/cart' && (
+        {pathname !== ROUTES.CART && (
           <>
             <Search />
             <>
-              <Link to="/cart" className="button button--cart">
+              <Link
+                to={ROUTES.CART}
+                className={`${styles.cartButton} button button--cart`}
+              >
                 <span>{totalPrice} ₴</span>
                 <div className="button__delimiter"></div>
                 <svg

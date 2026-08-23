@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useFilterActions } from '../../redux/store.hooks'
 import { debounce } from '../../utils/utils'
 import styles from './Search.module.scss'
@@ -22,16 +22,11 @@ export default function Search() {
     [setSearchValue]
   )
 
-  const updateSearchValue = useCallback(
-    (str: string) => debouncedSetSearchValue(str),
-    [debouncedSetSearchValue]
-  )
-
   useEffect(() => debouncedSetSearchValue.cancel(), [debouncedSetSearchValue])
 
   function handleChangeInput(e: React.ChangeEvent<HTMLInputElement>) {
     setValue(e.target.value)
-    updateSearchValue(e.target.value)
+    debouncedSetSearchValue(e.target.value)
   }
 
   return (

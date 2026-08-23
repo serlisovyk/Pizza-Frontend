@@ -1,11 +1,10 @@
-import { memo } from 'react'
 import Loader from '../Loader/Loader'
 import { useGetCategoriesQuery } from '../../redux/api/apiSlice'
 import { selectFilterCurrentCategory } from '../../redux/slices/filter/filterSlice'
 import { useAppSelector, useFilterActions } from '../../redux/store.hooks'
 import styles from './Categories.module.scss'
 
-export default memo(function Categories() {
+export default function Categories() {
   const { setActiveCategory } = useFilterActions()
 
   const { data: categories, isLoading } = useGetCategoriesQuery()
@@ -31,4 +30,4 @@ export default memo(function Categories() {
       )}
     </div>
   )
-})
+}
